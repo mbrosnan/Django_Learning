@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Purple Text</title>
+    <style>
+        body {
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <h1>Mortgage Calculator</h1>
+    <p> {{ output }}</p>
+</body>
+
+<div>
+    <form action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+    <p style="display:inline">Home Price [$USD]</p> <input id="homeprice" name="homeprice" type="text" class="query-homeprice" placeholder="Home Price">
+    <br>
+    <p style="display:inline">Down Payment [$USD]</p> <input id="downpayment" name="downpayment" type="text" class="query-downpayment" placeholder="Down Payment">
+    <br>
+    <p style="display:inline">Loan Term [months]</p> <input id="loanterm" name="loanterm" type="text" class="query-loanterm" placeholder="Loan Term">
+    <br>
+    <p style="display:inline">Interest Rate [%]</p> <input id="interestrate" name="interestrate" type="text" class="query-interestrate" placeholder="Interest Rate">
+    <br>
+    <input class="btn btn-primary" type="submit" value="Calculate Monthly Payment">
+    </form>
+</div>
+
+
+</html>
